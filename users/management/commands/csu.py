@@ -11,6 +11,7 @@ class Command(BaseCommand):
             email='admin@admin.admin',
             first_name='Admin',
             last_name='Admin',
+            is_active = True,
             is_staff=True,
             is_superuser=True
         )
