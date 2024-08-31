@@ -40,7 +40,7 @@ class User(AbstractUser):
         verbose_name='User Role',
     )
     image = models.ImageField(
-        upload_to="media/user",
+        upload_to="media/users/avatars",
         verbose_name='Image',
     )
     is_active = models.BooleanField(
