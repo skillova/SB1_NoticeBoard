@@ -51,6 +51,10 @@ class User(AbstractUser):
         default=False,
         verbose_name='Staff Member',
     )
+    token = models.CharField(
+        max_length=100,
+        **NULLABLE,
+        verbose_name="Token")
 
     class Meta:
         verbose_name = "Пользователь"
