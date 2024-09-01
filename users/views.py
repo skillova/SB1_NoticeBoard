@@ -1,4 +1,8 @@
+from django.urls import reverse_lazy
+from django.views.generic import CreateView, UpdateView, ListView, DetailView, DeleteView
 from rest_framework import generics
+
+from .forms import UserRegisterForm
 from .models import User
 from .serializers import UserSerializer
 
@@ -29,3 +33,9 @@ class UserUpdateAPIView(generics.UpdateAPIView):
 
 class UserDestroyAPIView(generics.DestroyAPIView):
     queryset = User.objects.all()
+
+
+class UserCreateView(CreateView):
+    model = User
+    form_class = UserRegisterForm
+    success_url = reverse_lazy("users:login")
