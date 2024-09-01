@@ -21,7 +21,7 @@ class Announcement(models.Model):
         ordering = ("-created_at",)
 
     def __str__(self):
-        return f"{self.author.name} | {self.title}"
+        return f"{self.author} | {self.title}"
 
 
 class Comment(models.Model):
