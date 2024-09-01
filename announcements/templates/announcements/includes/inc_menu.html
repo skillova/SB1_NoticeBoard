@@ -4,8 +4,11 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="{% url 'announcements:list' %}" class="nav-link px-2 link-body-emphasis">Главная</a></li>
                 <li><a href="{% url 'announcements:create' %}" class="nav-link px-2 link-body-emphasis">Добавить объявление</a>
-                <li><a href="{% url 'admin:login' %}" class="nav-link px-2 link-body-emphasis">Войти</a></li>
-                <li><a href="{% url 'admin:logout' %}" class="nav-link px-2 link-body-emphasis">Выйти</a></li>
+                {% if  not user.is_authenticated %}
+                <li><a href="{% url 'users:login' %}" class="nav-link px-2 link-body-emphasis">Войти</a></li>
+                {% else %}
+                <li><a href="{% url 'users:logout' %}" class="nav-link px-2 link-body-emphasis">Выйти</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
