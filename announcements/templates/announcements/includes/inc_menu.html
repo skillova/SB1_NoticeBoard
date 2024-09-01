@@ -9,6 +9,7 @@
                 <li><a href="{% url 'users:register' %}" class="nav-link px-2 link-body-emphasis" >Зарегистрироваться</a></li>
                 {% else %}
                 <li><a href="{% url 'users:logout' %}" class="nav-link px-2 link-body-emphasis">Выйти</a></li>
+                <li><a href="{% url 'users:password_reset' %}" class="nav-link px-2 link-body-emphasis">Изменить пароль</a></li>
                 {% endif %}
             </ul>
         </div>
