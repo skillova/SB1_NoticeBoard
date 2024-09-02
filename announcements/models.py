@@ -27,7 +27,7 @@ class Announcement(models.Model):
 class Comment(models.Model):
     text = models.CharField(max_length=255,)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
-    ad = models.ForeignKey(to=Announcement, on_delete=models.CASCADE,)
+    ad = models.ForeignKey(to=Announcement, on_delete=models.CASCADE, related_name='announcement')
     created_at = models.DateTimeField(auto_now_add=True,)
 
     class Meta:
@@ -35,4 +35,4 @@ class Comment(models.Model):
         verbose_name_plural = "Комментарии"
 
     def __str__(self):
-        return f"{self.author.name} | {self.ad.name} | {self.text}"
+        return f"{self.author} | {self.ad} | {self.text}"
